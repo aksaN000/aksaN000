@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/ch-2.svg" width="100%" alt="II. Present tense" /><img src="assets/present.svg" width="100%" alt="Thesis: CAEM, Confidence-Aware Episodic Memory, grown from my early design CEREBRA into a hallucination-reduction system. Next: an image-processing project. Exploring: AI engineering and research, and web development. Planned: a hobby operating system in C, written from scratch." />
+  <img src="assets/ch-2.svg" width="100%" alt="II. Present tense" /><img src="assets/present.svg" width="100%" alt="Thesis: CAEM, Confidence-Aware Episodic Memory, reducing hallucination in LLMs. Next: an image-processing project. Exploring: AI engineering and research, and web development. Planned: a hobby operating system in C, written from scratch." />
 </p>
 
 <p align="center">

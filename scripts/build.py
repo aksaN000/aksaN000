@@ -1,4 +1,5 @@
 """Builds the static SVG plates for the profile README into ../assets."""
+import base64
 import math
 import re
 from pathlib import Path
@@ -127,9 +128,8 @@ PREFACE = [
     "That instinct is why I built a multithreaded process manager in C on POSIX threads, traced "
     "mutexes and spinlocks down to the assembly, and started my thesis from my own intuition about how "
     "memory and confidence should work inside a language model, not from a paper I was handed.",
-    "I tend to think independently. More than once I've reached an idea on my own (mixture of "
-    "experts, task arithmetic, the superposition hypothesis, knowledge editing) only to find it "
-    "already in the literature. I read that as a signal: my work now is connecting instinct to "
+    "I tend to think independently. More than once I've reached an idea on my own, like "
+    "mixture of experts or task arithmetic, only to find it already in the literature. I read that as a signal: my work now is connecting instinct to "
     "research faster, so the original part lands on problems that are still open.",
 ]
 DIRECTION = "Where I'm headed: a research-capable, systems-aware, full-stack AI engineer."
@@ -164,8 +164,8 @@ def preface():
 
 # ─────────────────────────── present tense ───────────────────────────
 PRESENT = [
-    ("THESIS", "CAEM, Confidence-Aware Episodic Memory: grown from my own early design (CEREBRA, late 2025) "
-               "into a hallucination-reduction system built on episodic memory, confidence estimation and self-improvement."),
+    ("THESIS", "CAEM, Confidence-Aware Episodic Memory: reducing hallucination in LLMs through episodic memory, "
+               "confidence estimation and self-improvement."),
     ("NEXT", "An image-processing project, still on the drawing board."),
     ("EXPLORING", "AI engineering and research, and web development end to end."),
     ("PLANNED", "A hobby operating system in C, written from scratch."),
@@ -203,10 +203,10 @@ WORKS = [
     ("470_project", "FULL STACK · LIVE", "MemeStack",
      "A meme studio and community: canvas editor, template library, collaborations, challenges, groups and moderation, deployed on Vercel.",
      "REACT · MUI · EXPRESS · MONGODB · CLOUDINARY"),
-    ("425_project", "RESEARCH · GENERATIVE", "Music, Clustered",
+    ("425_project", "RESEARCH · GENERATIVE", "VAE Music Clustering",
      "Seven variational autoencoders, from beta-VAE to a multimodal audio + lyrics model, clustering songs across four languages and three genres.",
      "PYTORCH · LIBROSA · SCIKIT-LEARN · UMAP"),
-    ("Continual-Learning", "RESEARCH · NLP", "Against Forgetting",
+    ("Continual-Learning", "RESEARCH · NLP", "Continual Learning",
      "Elastic weight consolidation versus experience replay for a BERT intent classifier trained domain by domain. Sixteen configurations, twelve metrics.",
      "PYTORCH · TRANSFORMERS · BERT"),
     ("process-manager", "SYSTEMS · C", "Process Manager",
@@ -247,9 +247,26 @@ INSTRUMENTS = [
 ]
 
 
+COLOR_ICONS = Path(__file__).parent / "icons-color"
+DEVICON_NAMES = {"nodedotjs": "nodejs", "mui": "materialui"}
+# Logos with no Devicon original, or whose brand colour vanishes on the dark plate.
+FLAT_COLORS = {"huggingface": "#FFD21E", "weightsandbiases": "#FFBE00", "lightning": "#792EE5",
+               "gnubash": "#4EAA25", "latex": "#3aa7a7", "express": IVORY, "vercel": IVORY, "pandas": IVORY,
+               "mysql": "#4479A1", "linux": "#FCC624"}
+
+
 def icon_path(name):
     raw = (ICONS / f"{name}.svg").read_text(encoding="utf-8")
     return re.search(r'<path d="([^"]+)"', raw).group(1)
+
+
+def icon(name, x, y, size):
+    if name not in FLAT_COLORS:
+        data = base64.b64encode((COLOR_ICONS / f"{DEVICON_NAMES.get(name, name)}.svg").read_bytes()).decode()
+        return (f'<image x="{x:.1f}" y="{y:.1f}" width="{size}" height="{size}" '
+                f'href="data:image/svg+xml;base64,{data}"/>')
+    return (f'<g transform="translate({x:.1f},{y:.1f}) scale({size / 24})">'
+            f'<path d="{icon_path(name)}" fill="{FLAT_COLORS[name]}"/></g>')
 
 
 def instruments():
@@ -260,10 +277,9 @@ def instruments():
         if r:
             out.append(f'<line x1="{pad}" y1="{y:.1f}" x2="{W - pad}" y2="{y:.1f}" stroke="{HAIR}"/>')
         out.append(text(pad, y + 50, label, "mono", 10, BRASS, 0.26))
-        for k, (icon, name) in enumerate(items):
+        for k, (slug, name) in enumerate(items):
             x = pad + label_w + k * step
-            out.append(f'<g transform="translate({x + (step - size) / 2 - 12:.1f},{y + 22}) scale({size / 24})">'
-                       f'<path d="{icon_path(icon)}" fill="{IVORY}" opacity="0.88"/></g>')
+            out.append(icon(slug, x + (step - size) / 2 - 12, y + 22, size))
             out.append(text(x + step / 2 - 12, y + 76, name.upper(), "mono", 8, MUTED, 0.12, "middle"))
         y += row_h
     h = int(y + 8)
