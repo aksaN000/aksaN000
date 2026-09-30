@@ -167,8 +167,8 @@ PRESENT = [
     ("THESIS", "CAEM, Confidence-Aware Episodic Memory: reducing hallucination in LLMs through episodic memory, "
                "confidence estimation and self-improvement."),
     ("NEXT", "An image-processing project, still on the drawing board."),
-    ("EXPLORING", "AI engineering and research, and web development end to end."),
-    ("PLANNED", "A hobby operating system in C, written from scratch."),
+    ("EXPLORING", "AI engineering, research and web development."),
+    ("PLANNED", "A hobby operating system in C, from scratch."),
 ]
 
 

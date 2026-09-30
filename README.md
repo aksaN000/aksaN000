@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/ch-2.svg" width="100%" alt="II. Current work" /><img src="assets/present.svg" width="100%" alt="Thesis: CAEM, Confidence-Aware Episodic Memory, reducing hallucination in LLMs. Next: an image-processing project. Exploring: AI engineering and research, and web development. Planned: a hobby operating system in C, written from scratch." />
+  <img src="assets/ch-2.svg" width="100%" alt="II. Current work" /><img src="assets/present.svg" width="100%" alt="Thesis: CAEM, Confidence-Aware Episodic Memory, reducing hallucination in LLMs. Next: an image-processing project. Exploring: AI engineering, research and web development. Planned: a hobby operating system in C, from scratch." />
 </p>
 
 <p align="center">
