@@ -94,7 +94,7 @@ def banner():
 # ─────────────────────────── chapter heads ───────────────────────────
 CHAPTERS = [
     ("I", "Preface", "WHO I AM"),
-    ("II", "Present tense", "WHAT I'M DOING NOW"),
+    ("II", "Current work", "IN PROGRESS"),
     ("III", "Selected works", "SIX PROJECTS"),
     ("IV", "Instruments", "WHAT I BUILD WITH"),
     ("V", "Ledger", "BY THE NUMBERS"),
@@ -125,9 +125,10 @@ def chapter(num, title, caption, idx):
 PREFACE = [
     "Hello, I'm Aksan: a final-year Computer Science & Engineering student at BRAC University "
     "in Dhaka, and someone who has to know how a thing works before I'm comfortable using it. "
-    "That instinct is why I built a multithreaded process manager in C on POSIX threads, traced "
-    "mutexes and spinlocks down to the assembly, and started my thesis from my own intuition about how "
-    "memory and confidence should work inside a language model, not from a paper I was handed.",
+    "That instinct is why, when I build something like a multithreaded process manager in C, I end up "
+    "following its mutexes and spinlocks all the way down to the assembly. It's also why my thesis began "
+    "with my own intuition about how memory and confidence should work inside a language model, rather "
+    "than with a paper I was handed.",
     "I tend to think independently. More than once I've reached an idea on my own, like "
     "mixture of experts or task arithmetic, only to find it already in the literature. I read that as a signal: my work now is connecting instinct to "
     "research faster, so the original part lands on problems that are still open.",
