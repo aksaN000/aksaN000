@@ -74,8 +74,7 @@ def languages(repos):
 
 def render(user):
     cal = user["contributionsCollection"]["contributionCalendar"]
-    weeks = cal["weeks"]
-    days = [d for w in weeks for d in w["contributionDays"]]
+    days = [d for w in cal["weeks"] for d in w["contributionDays"]]
     current, longest = streaks(days)
     langs = languages(user["repositories"])
 
@@ -96,39 +95,9 @@ def render(user):
         out.append(text(x, 82, num, "serif", 46, IVORY))
         out.append(text(x + 2, 104, label, "mono", 8.5, MUTED, 0.22))
 
-    top = 150
-    step = (W - 2 * pad) / len(weeks)
-    r = min(step * 0.34, 4.2)
-    nonzero = sorted(d["contributionCount"] for d in days if d["contributionCount"])
-    q = [nonzero[int(len(nonzero) * f)] if nonzero else 1 for f in (0.25, 0.5, 0.75)]
-
-    def level(c):
-        if not c:
-            return None
-        return 0.3 if c <= q[0] else 0.5 if c <= q[1] else 0.75 if c <= q[2] else 1.0
-
-    last_month = None
-    for wi, w in enumerate(weeks):
-        x = pad + wi * step + step / 2
-        month = w["contributionDays"][-1]["date"][5:7]
-        starts = any(d["date"].endswith("-01") for d in w["contributionDays"])
-        if starts and month != last_month and wi < len(weeks) - 2:
-            name = dt.date(2000, int(month), 1).strftime("%b").upper()
-            out.append(text(x - r, top - 12, name, "mono", 8, FAINT, 0.16))
-            last_month = month
-        for d in w["contributionDays"]:
-            wd = dt.date.fromisoformat(d["date"]).weekday()
-            row = (wd + 1) % 7
-            y = top + row * step + step / 2
-            lv = level(d["contributionCount"])
-            if lv is None:
-                out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r * 0.45:.2f}" fill="{FAINT}" opacity="0.55"/>')
-            else:
-                out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r:.2f}" fill="{BRASS}" opacity="{lv}"/>')
-
-    y = top + 7 * step + 34
+    y = 140
     out.append(f'<line x1="{pad}" y1="{y:.1f}" x2="{W - pad}" y2="{y:.1f}" stroke="{HAIR}"/>')
-    y += 34
+    y += 44
     out.append(text(pad, y, "LANGUAGE MIX", "mono", 9.5, BRASS, 0.26))
     bar_x, bar_w = pad + 176, W - 2 * pad - 176
     shades = [1.0, 0.72, 0.5, 0.34, 0.22]

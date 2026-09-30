@@ -96,8 +96,9 @@ CHAPTERS = [
     ("II", "Present tense", "WHAT I'M DOING NOW"),
     ("III", "Selected works", "SIX PROJECTS"),
     ("IV", "Instruments", "WHAT I BUILD WITH"),
-    ("V", "Ledger", "THE LAST TWELVE MONTHS"),
-    ("VI", "Correspondence", "WHERE TO FIND ME"),
+    ("V", "Ledger", "BY THE NUMBERS"),
+    ("VI", "Margins", "OFF THE CLOCK"),
+    ("VII", "Correspondence", "WHERE TO FIND ME"),
 ]
 
 
@@ -120,41 +121,55 @@ def chapter(num, title, caption, idx):
 
 
 # ───────────────────────────── preface ─────────────────────────────
-PREFACE = (
-    "Hello, I'm Aksan: a final-year Computer Science & Engineering student at BRAC University in Dhaka. "
-    "My work lives between two worlds: AI research and engineering, where I study how large "
-    "models remember, adapt and fail; and the web, where I build full-stack products people "
-    "can actually use. I like understanding a system all the way down, which is why, after "
-    "hours, I am writing an operating system of my own."
-)
+PREFACE = [
+    "Hello, I'm Aksan: a final-year Computer Science & Engineering student at BRAC University "
+    "in Dhaka, and someone who has to know how a thing works before I'm comfortable using it. "
+    "That instinct is why I've written a hobby operating system in C, traced mutexes and "
+    "spinlocks down to the assembly, and started my thesis from my own intuition about how "
+    "memory and confidence should work inside a language model, not from a paper I was handed.",
+    "I tend to think independently. More than once I've reached an idea on my own (mixture of "
+    "experts, task arithmetic, the superposition hypothesis, knowledge editing) only to find it "
+    "already in the literature. I read that as a signal: my work now is connecting instinct to "
+    "research faster, so the original part lands on problems that are still open.",
+]
+DIRECTION = "Where I'm headed: a research-capable, systems-aware, full-stack AI engineer."
 
 
 def preface():
-    pad, size, lh = 48, 21.5, 33
-    cap, rest = PREFACE[0], PREFACE[1:]
-    cap_size = 78
-    cap_w = measure(cap, "serif-md", cap_size) + 14
+    pad, size, lh, gap = 48, 21, 32, 18
     width = W - 2 * pad
-    first = wrap(rest, "serif", size, width - cap_w)
-    lines = first[:2]
-    remaining = rest[len(" ".join(lines)):].strip()
-    lines += wrap(remaining, "serif", size, width)
-    y0 = pad + 26
-    out = [text(pad - 2, y0 + lh - 2, cap, "serif-md", cap_size, BRASS)]
-    for i, ln in enumerate(lines):
-        x = pad + (cap_w if i < 2 else 0)
-        out.append(text(x, y0 + i * lh, ln, "serif", size, IVORY))
-    h = int(y0 + (len(lines) - 1) * lh + pad)
-    save("preface.svg", svg(W, h, plate(h, "\n".join(out)), ["serif", "serif-md"], PREFACE))
+    cap_size = 78
+    cap, rest = PREFACE[0][0], PREFACE[0][1:]
+    cap_w = measure(cap, "serif-md", cap_size) + 14
+    first = wrap(rest, "serif", size, width - cap_w)[:2]
+    remaining = rest[len(" ".join(first)):].strip()
+    y = pad + 26
+    out = [text(pad - 2, y + lh - 2, cap, "serif-md", cap_size, BRASS)]
+    for i, ln in enumerate(first + wrap(remaining, "serif", size, width)):
+        out.append(text(pad + (cap_w if i < 2 else 0), y, ln, "serif", size, IVORY))
+        y += lh
+    for para in PREFACE[1:]:
+        y += gap
+        for ln in wrap(para, "serif", size, width):
+            out.append(text(pad, y, ln, "serif", size, IVORY))
+            y += lh
+    y += 20
+    out.append(f'<line x1="{pad}" y1="{y - 8}" x2="{pad + 44}" y2="{y - 8}" stroke="{BRASS}"/>')
+    y += 26
+    out.append(text(pad, y, DIRECTION, "serif-it", 23, BRASS))
+    h = int(y + pad - 8)
+    save("preface.svg", svg(W, h, plate(h, "\n".join(out)), ["serif", "serif-md", "serif-it"],
+                            " ".join(PREFACE) + " " + DIRECTION))
 
 
 # ─────────────────────────── present tense ───────────────────────────
 PRESENT = [
-    ("THESIS", "Finishing CAEM, a confidence-aware episodic memory that reduces hallucination in large language models."),
+    ("THESIS", "CAEM, Confidence-Aware Episodic Memory: grown from my own early design (CEREBRA, late 2025) "
+               "into a hallucination-reduction system built on episodic memory, confidence estimation and self-improvement."),
+    ("AIMING FOR", "Getting CAEM published, then graduate research."),
     ("NEXT", "An image-processing project, still on the drawing board."),
-    ("EXPLORING", "AI engineering and research: fine-tuning, retrieval, parameter-efficient adaptation."),
-    ("EXPLORING", "Web development, end to end: interfaces, APIs, databases, deployment."),
-    ("AFTER HOURS", "A hobby operating system, written from scratch."),
+    ("EXPLORING", "AI engineering and research, and web development end to end."),
+    ("AFTER HOURS", "My hobby operating system, written in C."),
 ]
 
 
@@ -222,7 +237,7 @@ def work_card(i, repo, tag, title, desc, stack):
 
 # ─────────────────────────── instruments ───────────────────────────
 INSTRUMENTS = [
-    ("LANGUAGES", [("python", "Python"), ("javascript", "JavaScript"), ("typescript", "TypeScript"),
+    ("LANGUAGES", [("python", "Python"), ("c", "C"), ("javascript", "JavaScript"), ("typescript", "TypeScript"),
                    ("php", "PHP"), ("latex", "LaTeX"), ("gnubash", "Bash")]),
     ("MACHINE LEARNING", [("pytorch", "PyTorch"), ("huggingface", "Hugging Face"), ("lightning", "Lightning"),
                           ("scikitlearn", "scikit-learn"), ("pandas", "pandas"), ("numpy", "NumPy"),
@@ -255,6 +270,31 @@ def instruments():
     h = int(y + 8)
     alt = "; ".join(f"{g}: " + ", ".join(n for _, n in items) for g, items in INSTRUMENTS)
     save("instruments.svg", svg(W, h, plate(h, "\n".join(out)), ["mono"], alt))
+
+
+# ───────────────────────────── margins ─────────────────────────────
+MARGINS = [
+    ("PLAYING", "Clash Royale, competitively."),
+    ("WRITING", "Personal journals, in LaTeX."),
+    ("SOMEDAY", "A long list of places to see."),
+]
+
+
+def margins():
+    pad = 48
+    col = (W - 2 * pad) / len(MARGINS)
+    rows = max(len(wrap(line, "serif-it", 21, col - 40)) for _, line in MARGINS)
+    h = 86 + (rows - 1) * 26 + 42
+    out = []
+    for i, (label, line) in enumerate(MARGINS):
+        x = pad + i * col
+        if i:
+            out.append(f'<line x1="{x - 20:.1f}" y1="36" x2="{x - 20:.1f}" y2="{h - 36}" stroke="{HAIR}"/>')
+        out.append(text(x, 54, label, "mono", 9.5, BRASS, 0.26))
+        for j, ln in enumerate(wrap(line, "serif-it", 21, col - 40)):
+            out.append(text(x, 86 + j * 26, ln, "serif-it", 21, IVORY))
+    alt = " ".join(f"{a}: {b}" for a, b in MARGINS)
+    save("margins.svg", svg(W, h, plate(h, "\n".join(out)), ["serif-it", "mono"], alt))
 
 
 # ─────────────────────────── correspondence ───────────────────────────
@@ -298,6 +338,7 @@ if __name__ == "__main__":
     for i, w in enumerate(WORKS, 1):
         work_card(i, *w)
     instruments()
+    margins()
     for link in LINKS:
         pill(*link)
     colophon()
