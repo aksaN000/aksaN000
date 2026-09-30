@@ -129,9 +129,8 @@ PREFACE = [
     "following its mutexes and spinlocks all the way down to the assembly. It's also why my thesis began "
     "with my own intuition about how memory and confidence should work inside a language model, rather "
     "than with a paper I was handed.",
-    "I tend to think independently. More than once I've reached an idea on my own, like "
-    "mixture of experts or task arithmetic, only to find it already in the literature. I read that as a signal: my work now is connecting instinct to "
-    "research faster, so the original part lands on problems that are still open.",
+    "I think independently, sometimes enough to reach ideas like mixture of experts on my own before "
+    "finding them in the literature. Now I'm learning to connect that instinct to research faster.",
 ]
 DIRECTION = "Where I'm headed: a research-capable, systems-aware, full-stack AI engineer."
 
