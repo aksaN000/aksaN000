@@ -92,13 +92,13 @@ def render(user):
         x = pad + i * col
         if i:
             out.append(f'<line x1="{x - 18:.1f}" y1="44" x2="{x - 18:.1f}" y2="98" stroke="{HAIR}"/>')
-        out.append(text(x, 82, num, "serif", 46, IVORY))
-        out.append(text(x + 2, 104, label, "mono", 8.5, MUTED, 0.22))
+        out.append(text(x, 82, num, "serif-lt", 46, IVORY))
+        out.append(text(x + 2, 106, label, "mono", 10, MUTED, 0.16))
 
     y = 140
     out.append(f'<line x1="{pad}" y1="{y:.1f}" x2="{W - pad}" y2="{y:.1f}" stroke="{HAIR}"/>')
     y += 44
-    out.append(text(pad, y, "LANGUAGE MIX", "mono", 9.5, BRASS, 0.26))
+    out.append(text(pad, y, "LANGUAGE MIX", "mono", 10.5, BRASS, 0.26))
     bar_x, bar_w = pad + 176, W - 2 * pad - 176
     shades = [1.0, 0.72, 0.5, 0.34, 0.22]
     x = bar_x
@@ -111,17 +111,17 @@ def render(user):
     for (name, share), op in zip(langs, shades):
         label = f"{name.upper()} {share * 100:.0f}%"
         out.append(f'<circle cx="{x + 3}" cy="{y - 3}" r="2.6" fill="{BRASS}" opacity="{op}"/>')
-        out.append(text(x + 12, y, label, "mono", 8.5, MUTED, 0.14))
-        x += measure(label, "mono", 8.5, 0.14) + 34
+        out.append(text(x + 12, y, label, "mono", 10, MUTED, 0.1))
+        x += measure(label, "mono", 10, 0.1) + 30
 
     h = int(y + 38)
     out[0] = (f'<rect width="{W}" height="{h}" fill="{INK}"/>'
               f'<rect x="0.5" y="0.5" width="{W - 1}" height="{h - 1}" fill="none" stroke="{HAIR}"/>')
     stamp = dt.datetime.now(dt.timezone.utc).strftime("UPDATED %d %b %Y").upper()
-    out.append(text(W - pad, h - 16, stamp, "mono", 7.5, FAINT, 0.2, "end"))
+    out.append(text(W - pad, h - 16, stamp, "mono", 9, FAINT, 0.18, "end"))
     alt = (f"{cal['totalContributions']} contributions in the last year; current streak {current} days; "
            f"longest streak {longest} days; top languages: " + ", ".join(f"{n} {s:.0%}" for n, s in langs))
-    OUT.write_text(svg(W, h, "\n".join(out), ["serif", "mono"], alt), encoding="utf-8")
+    OUT.write_text(svg(W, h, "\n".join(out), ["serif-lt", "mono"], alt), encoding="utf-8")
     print(alt)
 
 

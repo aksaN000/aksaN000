@@ -81,13 +81,13 @@ def banner():
 {text(W - 44, 52, "23.8103° N · 90.4125° E", "mono", 10.5, MUTED, 0.2, "end")}
 {orbit}
 {text(44, 118, "AI RESEARCH · SYSTEMS · WEB", "mono", 11, BRASS, 0.32)}
-{text(40, 186, "Md. Aksan Gony Alif", "serif", 62, IVORY)}
+{text(40, 186, "Md. Aksan Gony Alif", "serif-lt", 62, IVORY)}
 {text(44, 228, "Between the model and the metal.", "serif-it", 25, MUTED)}
 <line x1="44" y1="258" x2="104" y2="258" stroke="{BRASS}"/>
 {text(44, 292, "FINAL-YEAR CSE · BRAC UNIVERSITY · DHAKA", "mono", 10.5, MUTED, 0.24)}
-{text(W - 44, 326, "FIG. 01 — ORBITS OF MEMORY", "mono", 9, FAINT, 0.24, "end")}
+{text(W - 44, 326, "FIG. 01 — ORBITS OF MEMORY", "mono", 10, FAINT, 0.24, "end")}
 """
-    save("banner.svg", svg(W, h, body, ["serif", "serif-it", "mono"],
+    save("banner.svg", svg(W, h, body, ["serif-lt", "serif-it", "mono"],
                            "Md. Aksan Gony Alif — AI research, systems and web. Final-year CSE, BRAC University, Dhaka."))
 
 
@@ -108,17 +108,17 @@ def chapter(num, title, caption, idx):
     nx = 36
     nw = measure(num, "serif-it", 30)
     tx = nx + nw + 16
-    tw = measure(title, "serif", 32)
-    cw = measure(caption, "mono", 9.5, 0.26)
+    tw = measure(title, "serif-lt", 32)
+    cw = measure(caption, "mono", 10.5, 0.26)
     rule_start, rule_end = tx + tw + 22, W - 36 - cw - 20
     body = plate(h, f"""
 {text(nx, 50, num, "serif-it", 30, BRASS)}
-{text(tx, 50, title, "serif", 32, IVORY)}
+{text(tx, 50, title, "serif-lt", 32, IVORY)}
 <line x1="{rule_start:.1f}" y1="42.5" x2="{rule_end:.1f}" y2="42.5" stroke="{HAIR}"/>
 <circle cx="{rule_end:.1f}" cy="42.5" r="1.6" fill="{BRASS}"/>
-{text(W - 36, 46, caption, "mono", 9.5, MUTED, 0.26, "end")}
+{text(W - 36, 46, caption, "mono", 10.5, MUTED, 0.26, "end")}
 """)
-    save(f"ch-{idx}.svg", svg(W, h, body, ["serif", "serif-it", "mono"], f"Chapter {num}: {title}"))
+    save(f"ch-{idx}.svg", svg(W, h, body, ["serif-lt", "serif-it", "mono"], f"Chapter {num}: {title}"))
 
 
 # ───────────────────────────── preface ─────────────────────────────
@@ -137,7 +137,7 @@ DIRECTION = "Where I'm headed: a research-capable, systems-aware, full-stack AI 
 
 
 def preface():
-    pad, size, lh, gap = 48, 21, 32, 18
+    pad, size, lh, gap = 48, 22, 33, 18
     width = W - 2 * pad
     cap_size = 78
     cap, rest = PREFACE[0][0], PREFACE[0][1:]
@@ -174,7 +174,7 @@ PRESENT = [
 
 
 def present():
-    pad, label_w, size, lh = 48, 168, 20, 28
+    pad, label_w, size, lh = 48, 172, 21, 29
     width = W - 2 * pad - label_w
     y = 22
     out = []
@@ -223,15 +223,15 @@ def work_card(i, repo, tag, title, desc, stack):
         f'<rect x="0.5" y="0.5" width="{cw - 1}" height="{ch - 1}" fill="none" stroke="{HAIR}"/>',
         ticks(0.5, 0.5, cw - 1, ch - 1, 8, BRASS, 7),
         text(pad, 46, f"{i:02d}", "mono", 11, BRASS, 0.2),
-        text(pad + 30, 46, tag, "mono", 9.5, MUTED, 0.24),
+        text(pad + 32, 46, tag, "mono", 10.5, MUTED, 0.22),
         text(cw - pad, 48, "↗", "serif", 22, MUTED, anchor="end"),
-        text(pad - 1, 98, title, "serif", 34, IVORY),
+        text(pad - 1, 98, title, "serif-lt", 34, IVORY),
     ]
-    for j, ln in enumerate(wrap(desc, "serif-it", 17.5, cw - 2 * pad)[:4]):
-        out.append(text(pad, 132 + j * 23, ln, "serif-it", 17.5, MUTED))
+    for j, ln in enumerate(wrap(desc, "serif-it", 18.5, cw - 2 * pad)[:4]):
+        out.append(text(pad, 132 + j * 24, ln, "serif-it", 18.5, MUTED))
     out.append(f'<line x1="{pad}" y1="{ch - 50}" x2="{cw - pad}" y2="{ch - 50}" stroke="{HAIR}"/>')
-    out.append(text(pad, ch - 26, stack, "mono", 9, MUTED, 0.16))
-    save(f"work-{i}.svg", svg(cw, ch, "\n".join(out), ["serif", "serif-it", "mono"],
+    out.append(text(pad, ch - 26, stack, "mono", 10, MUTED, 0.14))
+    save(f"work-{i}.svg", svg(cw, ch, "\n".join(out), ["serif", "serif-lt", "serif-it", "mono"],
                               f"{title} — {desc} Stack: {stack.title()}"))
 
 
@@ -281,7 +281,7 @@ def instruments():
         for k, (slug, name) in enumerate(items):
             x = pad + label_w + k * step
             out.append(icon(slug, x + (step - size) / 2 - 12, y + 22, size))
-            out.append(text(x + step / 2 - 12, y + 76, name.upper(), "mono", 8, MUTED, 0.12, "middle"))
+            out.append(text(x + step / 2 - 12, y + 76, name.upper(), "mono", 9, MUTED, 0.06, "middle"))
         y += row_h
     h = int(y + 8)
     alt = "; ".join(f"{g}: " + ", ".join(n for _, n in items) for g, items in INSTRUMENTS)
@@ -306,7 +306,7 @@ def margins():
         x = pad + i * col
         if i:
             out.append(f'<line x1="{x - 20:.1f}" y1="36" x2="{x - 20:.1f}" y2="{h - 36}" stroke="{HAIR}"/>')
-        out.append(text(x, 54, label, "mono", 9.5, BRASS, 0.26))
+        out.append(text(x, 54, label, "mono", 10.5, BRASS, 0.26))
         for j, ln in enumerate(wrap(line, "serif-it", 21, col - 40)):
             out.append(text(x, 86 + j * 26, ln, "serif-it", 21, IVORY))
     alt = " ".join(f"{a}: {b}" for a, b in MARGINS)
@@ -327,7 +327,7 @@ def pill(slug, label, value):
 <rect width="{pw}" height="{ph}" fill="{INK}"/>
 <rect x="0.5" y="0.5" width="{pw - 1}" height="{ph - 1}" fill="none" stroke="{HAIR}"/>
 <circle cx="24" cy="29" r="2.4" fill="{BRASS}"/>
-{text(36, 33, label, "mono", 9.5, BRASS, 0.28)}
+{text(36, 33, label, "mono", 10.5, BRASS, 0.26)}
 {text(22, 58, value, "serif", 21, IVORY)}
 {text(pw - 20, 34, "↗" if slug != "location" else "", "serif", 18, MUTED, anchor="end")}
 """
@@ -340,7 +340,7 @@ def colophon():
     body = plate(h, f"""
 <line x1="{W / 2 - 30}" y1="38" x2="{W / 2 + 30}" y2="38" stroke="{BRASS}"/>
 {text(W / 2, 74, "Set in Cormorant Garamond and JetBrains Mono. Composed in Dhaka.", "serif-it", 19, MUTED, anchor="middle")}
-{text(W / 2, 102, "MD. AKSAN GONY ALIF · MMXXVI", "mono", 9, FAINT, 0.3, "middle")}
+{text(W / 2, 102, "MD. AKSAN GONY ALIF · MMXXVI", "mono", 10, FAINT, 0.3, "middle")}
 """)
     save("colophon.svg", svg(W, h, body, ["serif-it", "mono"], "Colophon"))
 

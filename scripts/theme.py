@@ -12,12 +12,13 @@ INK = "#0d1117"
 PANEL = "#0e0e10"
 HAIR = "#26252a"
 IVORY = "#e9e3d5"
-MUTED = "#9a9486"
-FAINT = "#57534b"
+MUTED = "#b3ad9f"
+FAINT = "#7d786d"
 BRASS = "#c2a36b"
 
 FONTS = {
-    "serif": ("Cormorant", "cormorant-300.woff", 300, "normal"),
+    "serif": ("Cormorant", "cormorant-400.woff", 400, "normal"),
+    "serif-lt": ("Cormorant", "cormorant-300.woff", 300, "normal"),
     "serif-md": ("Cormorant", "cormorant-500.woff", 500, "normal"),
     "serif-it": ("Cormorant", "cormorant-italic-400.woff", 400, "italic"),
     "mono": ("JetBrains Mono", "jetbrains-400.woff", 400, "normal"),
@@ -61,7 +62,8 @@ def font_css(*keys):
             f"src:url(data:font/woff;base64,{data}) format('woff');}}"
         )
     classes = {
-        "serif": "font-family:'Cormorant',Georgia,serif;font-weight:300;font-variant-numeric:lining-nums",
+        "serif": "font-family:'Cormorant',Georgia,serif;font-weight:400;font-variant-numeric:lining-nums",
+        "serif-lt": "font-family:'Cormorant',Georgia,serif;font-weight:300;font-variant-numeric:lining-nums",
         "serif-md": "font-family:'Cormorant',Georgia,serif;font-weight:500;font-variant-numeric:lining-nums",
         "serif-it": "font-family:'Cormorant',Georgia,serif;font-weight:400;font-style:italic;font-variant-numeric:lining-nums",
         "mono": "font-family:'JetBrains Mono',Consolas,monospace;font-weight:400",

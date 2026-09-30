@@ -14,12 +14,12 @@
   <img src="assets/ch-3.svg" width="100%" alt="III. Selected works" />
 </p>
 <p align="center">
-  <a href="https://github.com/aksaN000/caem-thesis"><img src="assets/work-1.svg" width="49.5%" alt="CAEM — confidence-aware episodic memory that reduces LLM hallucination" /></a>
-  <a href="https://github.com/aksaN000/Sam2-sar-Flood-mapping"><img src="assets/work-2.svg" width="49.5%" alt="SAM 2 for Sentinel-1 SAR flood mapping" /></a>
-  <a href="https://github.com/aksaN000/memestack"><img src="assets/work-3.svg" width="49.5%" alt="MemeStack — full-stack meme studio and community" /></a>
-  <a href="https://github.com/aksaN000/vae-music-clustering"><img src="assets/work-4.svg" width="49.5%" alt="Seven VAEs for multilingual music clustering" /></a>
-  <a href="https://github.com/aksaN000/Continual-Learning"><img src="assets/work-5.svg" width="49.5%" alt="Continual learning: EWC vs. experience replay for BERT" /></a>
-  <a href="https://github.com/aksaN000/process-manager"><img src="assets/work-6.svg" width="49.5%" alt="Process Manager — simulated OS process table in C with POSIX threads" /></a>
+  <a href="https://github.com/aksaN000/caem-thesis"><img src="assets/work-1.svg" width="49%" alt="CAEM — confidence-aware episodic memory that reduces LLM hallucination" /></a>
+  <a href="https://github.com/aksaN000/Sam2-sar-Flood-mapping"><img src="assets/work-2.svg" width="49%" alt="SAM 2 for Sentinel-1 SAR flood mapping" /></a>
+  <a href="https://github.com/aksaN000/memestack"><img src="assets/work-3.svg" width="49%" alt="MemeStack — full-stack meme studio and community" /></a>
+  <a href="https://github.com/aksaN000/vae-music-clustering"><img src="assets/work-4.svg" width="49%" alt="Seven VAEs for multilingual music clustering" /></a>
+  <a href="https://github.com/aksaN000/Continual-Learning"><img src="assets/work-5.svg" width="49%" alt="Continual learning: EWC vs. experience replay for BERT" /></a>
+  <a href="https://github.com/aksaN000/process-manager"><img src="assets/work-6.svg" width="49%" alt="Process Manager — simulated OS process table in C with POSIX threads" /></a>
 </p>
 
 <p align="center">
@@ -38,9 +38,9 @@
   <img src="assets/ch-7.svg" width="100%" alt="VII. Correspondence" />
 </p>
 <p align="center">
-  <a href="mailto:aksangoni.alif@gmail.com"><img src="assets/link-email.svg" width="32.6%" alt="Email: aksangoni.alif@gmail.com" /></a>
-  <a href="https://github.com/aksaN000"><img src="assets/link-github.svg" width="32.6%" alt="GitHub: @aksaN000" /></a>
-  <img src="assets/link-location.svg" width="32.6%" alt="Based in Dhaka, Bangladesh" />
+  <a href="mailto:aksangoni.alif@gmail.com"><img src="assets/link-email.svg" width="32.3%" alt="Email: aksangoni.alif@gmail.com" /></a>
+  <a href="https://github.com/aksaN000"><img src="assets/link-github.svg" width="32.3%" alt="GitHub: @aksaN000" /></a>
+  <img src="assets/link-location.svg" width="32.3%" alt="Based in Dhaka, Bangladesh" />
 </p>
 
 <p align="center">
