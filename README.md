@@ -31,7 +31,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/ch-6.svg" width="100%" alt="VI. Margins" /><img src="assets/margins.svg" width="100%" alt="Playing: Clash Royale, competitively. Writing: personal journals, in LaTeX. Someday: a long list of places to see." />
+  <img src="assets/ch-6.svg" width="100%" alt="VI. Margins" /><img src="assets/margins.svg" width="100%" alt="Playing: Clash Royale, competitively. Also Valorant, PUBG and CS:GO. Writing: personal journals, in LaTeX. Someday: a long list of places to see." />
 </p>
 
 <p align="center">
