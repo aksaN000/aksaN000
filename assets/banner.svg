@@ -28,7 +28,7 @@
 <rect width="900" height="360" fill="url(#glow)"/>
 <rect x="16.5" y="16.5" width="867" height="327" fill="none" stroke="#26252a"/>
 <path d="M16.5,28.5V16.5H28.5 M871.5,16.5H883.5V28.5 M883.5,331.5V343.5H871.5 M28.5,343.5H16.5V331.5" fill="none" stroke="#c2a36b" stroke-width="1"/>
-<text x="44.0" y="52.0" class="mono" font-size="10.5" fill="#9a9486" text-anchor="start" letter-spacing="0.28em">AKSAN000 — README</text>
+<text x="44.0" y="52.0" class="mono" font-size="10.5" fill="#9a9486" text-anchor="start" letter-spacing="0.28em">AKSAN000</text>
 <text x="856.0" y="52.0" class="mono" font-size="10.5" fill="#9a9486" text-anchor="end" letter-spacing="0.2em">23.8103° N · 90.4125° E</text>
 
 <g opacity="0.95">

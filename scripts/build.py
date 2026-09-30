@@ -77,7 +77,7 @@ def banner():
 <rect width="{W}" height="{h}" fill="url(#glow)"/>
 <rect x="16.5" y="16.5" width="{W - 33}" height="{h - 33}" fill="none" stroke="{HAIR}"/>
 {ticks(16.5, 16.5, W - 33, h - 33, 12)}
-{text(44, 52, "AKSAN000 — README", "mono", 10.5, MUTED, 0.28)}
+{text(44, 52, "AKSAN000", "mono", 10.5, MUTED, 0.28)}
 {text(W - 44, 52, "23.8103° N · 90.4125° E", "mono", 10.5, MUTED, 0.2, "end")}
 {orbit}
 {text(44, 118, "AI RESEARCH · SYSTEMS · WEB", "mono", 11, BRASS, 0.32)}
