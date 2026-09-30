@@ -206,12 +206,12 @@ WORKS = [
     ("425_project", "RESEARCH · GENERATIVE", "Music, Clustered",
      "Seven variational autoencoders, from beta-VAE to a multimodal audio + lyrics model, clustering songs across four languages and three genres.",
      "PYTORCH · LIBROSA · SCIKIT-LEARN · UMAP"),
+    ("Continual-Learning", "RESEARCH · NLP", "Against Forgetting",
+     "Elastic weight consolidation versus experience replay for a BERT intent classifier trained domain by domain. Sixteen configurations, twelve metrics.",
+     "PYTORCH · TRANSFORMERS · BERT"),
     ("process-manager", "SYSTEMS · C", "Process Manager",
      "A simulated OS process table: concurrent fork, exit, wait and kill across POSIX threads, with zombie reaping, orphan adoption by init and a race-free monitor.",
      "C · PTHREADS · THREADSANITIZER"),
-    ("habit-tracker-cse370", "FULL STACK", "Habit Tracker",
-     "A gamified habit tracker with goals, tasks, a journal, friend challenges, badges and analytics, on a hand-rolled PHP MVC.",
-     "PHP · MYSQL · BOOTSTRAP · JAVASCRIPT"),
 ]
 
 
