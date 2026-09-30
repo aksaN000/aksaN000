@@ -16,8 +16,8 @@
 <p align="center">
   <a href="https://github.com/aksaN000/caem-thesis"><img src="assets/work-1.svg" width="49.5%" alt="CAEM — confidence-aware episodic memory that reduces LLM hallucination" /></a>
   <a href="https://github.com/aksaN000/Sam2-sar-Flood-mapping"><img src="assets/work-2.svg" width="49.5%" alt="SAM 2 for Sentinel-1 SAR flood mapping" /></a>
-  <a href="https://github.com/aksaN000/470_project"><img src="assets/work-3.svg" width="49.5%" alt="MemeStack — full-stack meme studio and community" /></a>
-  <a href="https://github.com/aksaN000/425_project"><img src="assets/work-4.svg" width="49.5%" alt="Seven VAEs for multilingual music clustering" /></a>
+  <a href="https://github.com/aksaN000/memestack"><img src="assets/work-3.svg" width="49.5%" alt="MemeStack — full-stack meme studio and community" /></a>
+  <a href="https://github.com/aksaN000/vae-music-clustering"><img src="assets/work-4.svg" width="49.5%" alt="Seven VAEs for multilingual music clustering" /></a>
   <a href="https://github.com/aksaN000/Continual-Learning"><img src="assets/work-5.svg" width="49.5%" alt="Continual learning: EWC vs. experience replay for BERT" /></a>
   <a href="https://github.com/aksaN000/process-manager"><img src="assets/work-6.svg" width="49.5%" alt="Process Manager — simulated OS process table in C with POSIX threads" /></a>
 </p>
