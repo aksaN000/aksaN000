@@ -124,8 +124,8 @@ def chapter(num, title, caption, idx):
 PREFACE = [
     "Hello, I'm Aksan: a final-year Computer Science & Engineering student at BRAC University "
     "in Dhaka, and someone who has to know how a thing works before I'm comfortable using it. "
-    "That instinct is why I've written a hobby operating system in C, traced mutexes and "
-    "spinlocks down to the assembly, and started my thesis from my own intuition about how "
+    "That instinct is why I built a multithreaded process manager in C on POSIX threads, traced "
+    "mutexes and spinlocks down to the assembly, and started my thesis from my own intuition about how "
     "memory and confidence should work inside a language model, not from a paper I was handed.",
     "I tend to think independently. More than once I've reached an idea on my own (mixture of "
     "experts, task arithmetic, the superposition hypothesis, knowledge editing) only to find it "
@@ -169,7 +169,7 @@ PRESENT = [
     ("AIMING FOR", "Getting CAEM published, then graduate research."),
     ("NEXT", "An image-processing project, still on the drawing board."),
     ("EXPLORING", "AI engineering and research, and web development end to end."),
-    ("AFTER HOURS", "My hobby operating system, written in C."),
+    ("PLANNED", "A hobby operating system in C, written from scratch."),
 ]
 
 
