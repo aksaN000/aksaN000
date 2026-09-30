@@ -290,7 +290,7 @@ def instruments():
 
 # ───────────────────────────── margins ─────────────────────────────
 MARGINS = [
-    ("PLAYING", "Clash Royale, competitively. Also Valorant, PUBG and CS:GO."),
+    ("PLAYING", "Valorant, PUBG, CS2 and Clash Royale."),
     ("WRITING", "Personal journals, in LaTeX."),
     ("SOMEDAY", "A long list of places to see."),
 ]
