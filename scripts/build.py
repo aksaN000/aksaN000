@@ -130,7 +130,7 @@ PREFACE = [
     "with my own intuition about how memory and confidence should work inside a language model, rather "
     "than with a paper I was handed.",
     "I think independently, sometimes enough to reach ideas like mixture of experts on my own before "
-    "finding them in the literature. Now I'm learning to connect that instinct to research faster.",
+    "finding them in the literature. I'm learning to connect that instinct to research more effectively.",
 ]
 DIRECTION = "Where I'm headed: a research-capable, systems-aware, full-stack AI engineer."
 
@@ -315,20 +315,21 @@ def margins():
 # ─────────────────────────── correspondence ───────────────────────────
 LINKS = [
     ("email", "EMAIL", "aksangoni.alif@gmail.com"),
+    ("linkedin", "LINKEDIN", "in/aizaz-alif-b137aa1b7"),
     ("github", "GITHUB", "@aksaN000"),
-    ("location", "BASED IN", "Dhaka, Bangladesh"),
+    ("facebook", "FACEBOOK", "aksan.alif55"),
 ]
 
 
 def pill(slug, label, value):
-    pw, ph = 292, 76
+    pw, ph = 440, 76
     body = f"""
 <rect width="{pw}" height="{ph}" fill="{INK}"/>
 <rect x="0.5" y="0.5" width="{pw - 1}" height="{ph - 1}" fill="none" stroke="{HAIR}"/>
 <circle cx="24" cy="29" r="2.4" fill="{BRASS}"/>
 {text(36, 33, label, "mono", 10.5, BRASS, 0.26)}
 {text(22, 58, value, "serif", 21, IVORY)}
-{text(pw - 20, 34, "↗" if slug != "location" else "", "serif", 18, MUTED, anchor="end")}
+{text(pw - 20, 34, "↗", "serif", 18, MUTED, anchor="end")}
 """
     save(f"link-{slug}.svg", svg(pw, ph, body, ["serif", "mono"], f"{label.title()}: {value}"))
 
