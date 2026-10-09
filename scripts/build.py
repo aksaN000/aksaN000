@@ -218,6 +218,12 @@ WORKS = [
 ]
 
 
+def card_slug(repo):
+    # named by project, not position, so GitHub's image cache never serves a stale card after reordering
+    return {"Root-to-End-of-Random-Technical-Concepts": "root-to-end",
+            "Sam2-sar-Flood-mapping": "sam2-flood"}.get(repo, repo.lower())
+
+
 def work_card(i, repo, tag, title, desc, stack):
     cw, ch, pad = 440, 268, 30
     out = [
@@ -233,7 +239,7 @@ def work_card(i, repo, tag, title, desc, stack):
         out.append(text(pad, 132 + j * 24, ln, "serif-it", 18.5, MUTED))
     out.append(f'<line x1="{pad}" y1="{ch - 50}" x2="{cw - pad}" y2="{ch - 50}" stroke="{HAIR}"/>')
     out.append(text(pad, ch - 26, stack, "mono", 10, MUTED, 0.14))
-    save(f"work-{i}.svg", svg(cw, ch, "\n".join(out), ["serif", "serif-lt", "serif-it", "mono"],
+    save(f"work-{card_slug(repo)}.svg", svg(cw, ch, "\n".join(out), ["serif", "serif-lt", "serif-it", "mono"],
                               f"{title} — {desc} Stack: {stack.title()}"))
 
 
