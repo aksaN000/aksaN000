@@ -95,7 +95,7 @@ def banner():
 CHAPTERS = [
     ("I", "Preface", "WHO I AM"),
     ("II", "Current work", "IN PROGRESS"),
-    ("III", "Selected works", "SIX PROJECTS"),
+    ("III", "Selected works", "EIGHT PROJECTS"),
     ("IV", "Instruments", "WHAT I BUILD WITH"),
     ("V", "Ledger", "BY THE NUMBERS"),
     ("VI", "Margins", "OFF THE CLOCK"),
@@ -206,9 +206,15 @@ WORKS = [
     ("memestack", "FULL STACK · LIVE", "MemeStack",
      "A meme studio and community: canvas editor, template library, collaborations, challenges, groups and moderation, deployed on Vercel.",
      "REACT · MUI · EXPRESS · MONGODB · CLOUDINARY"),
+    ("vae-music-clustering", "RESEARCH · GENERATIVE", "VAE Music Clustering",
+     "Seven variational autoencoders, from beta-VAE to a multimodal audio + lyrics model, clustering songs across four languages and three genres.",
+     "PYTORCH · LIBROSA · SCIKIT-LEARN · UMAP"),
     ("Continual-Learning", "RESEARCH · NLP", "Continual Learning",
      "Elastic weight consolidation versus experience replay for a BERT intent classifier trained domain by domain. Sixteen configurations, twelve metrics.",
      "PYTORCH · TRANSFORMERS · BERT"),
+    ("A-Comparative-Analysis-of-Traditional-Machine-Learning", "BENCHMARK · NLP", "Text Classifiers, Compared",
+     "25 experiments across classical ML, RNNs and transformers on 10-class question classification. BERT leads at 0.742 macro-F1, yet TF-IDF logistic regression beats every RNN.",
+     "SCIKIT-LEARN · PYTORCH · TRANSFORMERS · GLOVE"),
     ("process-manager", "SYSTEMS · C", "Process Manager",
      "A simulated OS process table: concurrent fork, exit, wait and kill across POSIX threads, with zombie reaping, orphan adoption by init and a race-free monitor.",
      "C · PTHREADS · THREADSANITIZER"),
@@ -218,7 +224,8 @@ WORKS = [
 def card_slug(repo):
     # named by project, not position, so GitHub's image cache never serves a stale card after reordering
     return {"Root-to-End-of-Random-Technical-Concepts": "root-to-end",
-            "Sam2-sar-Flood-mapping": "sam2-flood"}.get(repo, repo.lower())
+            "Sam2-sar-Flood-mapping": "sam2-flood",
+            "A-Comparative-Analysis-of-Traditional-Machine-Learning": "text-classifiers"}.get(repo, repo.lower())
 
 
 def work_card(i, repo, tag, title, desc, stack):
