@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/ch-2.svg" width="100%" alt="II. Current work" /><img src="assets/present.svg" width="100%" alt="Thesis: CAEM, Confidence-Aware Episodic Memory, reducing hallucination in LLMs. Next: an image-processing project. Exploring: AI engineering, research and web development. Planned: a hobby operating system in C, from scratch." />
+  <img src="assets/ch-2.svg" width="100%" alt="II. Current work" /><img src="assets/present.svg" width="100%" alt="Thesis: CAEM, Confidence-Aware Episodic Memory, reducing hallucination in LLMs. Building: Root to End, interactive simulations tracing systems concepts from the kernel up to the code. Writing: From Zero, a book on the layer of computing a CS degree assumes but rarely teaches. Next: an image-processing project. Exploring: AI engineering, research and web development. Planned: a hobby operating system in C, from scratch." />
 </p>
 
 <p align="center">
@@ -16,10 +16,11 @@
 <p align="center">
   <a href="https://github.com/aksaN000/caem-thesis"><img src="assets/work-1.svg" width="49%" alt="CAEM — confidence-aware episodic memory that reduces LLM hallucination" /></a>
   <a href="https://github.com/aksaN000/Sam2-sar-Flood-mapping"><img src="assets/work-2.svg" width="49%" alt="SAM 2 for Sentinel-1 SAR flood mapping" /></a>
-  <a href="https://github.com/aksaN000/memestack"><img src="assets/work-3.svg" width="49%" alt="MemeStack — full-stack meme studio and community" /></a>
-  <a href="https://github.com/aksaN000/vae-music-clustering"><img src="assets/work-4.svg" width="49%" alt="Seven VAEs for multilingual music clustering" /></a>
-  <a href="https://github.com/aksaN000/Continual-Learning"><img src="assets/work-5.svg" width="49%" alt="Continual learning: EWC vs. experience replay for BERT" /></a>
-  <a href="https://github.com/aksaN000/process-manager"><img src="assets/work-6.svg" width="49%" alt="Process Manager — simulated OS process table in C with POSIX threads" /></a>
+  <a href="https://aksan000.github.io/Root-to-End-of-Random-Technical-Concepts/"><img src="assets/work-3.svg" width="49%" alt="Root to End — interactive simulations tracing systems concepts from the kernel up to the code" /></a>
+  <a href="https://github.com/aksaN000/memestack"><img src="assets/work-4.svg" width="49%" alt="MemeStack — full-stack meme studio and community" /></a>
+  <a href="https://github.com/aksaN000/vae-music-clustering"><img src="assets/work-5.svg" width="49%" alt="Seven VAEs for multilingual music clustering" /></a>
+  <a href="https://github.com/aksaN000/Continual-Learning"><img src="assets/work-6.svg" width="49%" alt="Continual learning: EWC vs. experience replay for BERT" /></a>
+  <a href="https://github.com/aksaN000/process-manager"><img src="assets/work-7.svg" width="49%" alt="Process Manager — simulated OS process table in C with POSIX threads" /></a>
 </p>
 
 <p align="center">

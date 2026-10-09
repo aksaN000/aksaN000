@@ -95,7 +95,7 @@ def banner():
 CHAPTERS = [
     ("I", "Preface", "WHO I AM"),
     ("II", "Current work", "IN PROGRESS"),
-    ("III", "Selected works", "SIX PROJECTS"),
+    ("III", "Selected works", "SEVEN PROJECTS"),
     ("IV", "Instruments", "WHAT I BUILD WITH"),
     ("V", "Ledger", "BY THE NUMBERS"),
     ("VI", "Margins", "OFF THE CLOCK"),
@@ -164,6 +164,8 @@ def preface():
 PRESENT = [
     ("THESIS", "CAEM, Confidence-Aware Episodic Memory: reducing hallucination in LLMs through episodic memory, "
                "confidence estimation and self-improvement."),
+    ("BUILDING", "Root to End: interactive simulations that trace systems concepts from the kernel up to the code."),
+    ("WRITING", "From Zero, a book on the layer of computing a CS degree assumes but rarely teaches."),
     ("NEXT", "An image-processing project, still on the drawing board."),
     ("EXPLORING", "AI engineering, research and web development."),
     ("PLANNED", "A hobby operating system in C, from scratch."),
@@ -198,6 +200,9 @@ WORKS = [
     ("Sam2-sar-Flood-mapping", "PAPER · COMPUTER VISION", "SAM 2 × Radar Floods",
      "Parameter-efficient adaptation of Segment Anything to Sentinel-1 SAR flood mapping. Four PEFT methods, five backbones, one public test set.",
      "PYTORCH LIGHTNING · TRANSFORMERS · PEFT"),
+    ("Root-to-End-of-Random-Technical-Concepts", "SYSTEMS · LIVE", "Root to End",
+     "Interactive simulations that trace a concept from the kernel up to the code: the event loop, V8, TLS, a mouse click, threads and epoll. Built from real source, checked against real systems.",
+     "JAVASCRIPT · LINUX · CHROMIUM · V8"),
     ("memestack", "FULL STACK · LIVE", "MemeStack",
      "A meme studio and community: canvas editor, template library, collaborations, challenges, groups and moderation, deployed on Vercel.",
      "REACT · MUI · EXPRESS · MONGODB · CLOUDINARY"),
