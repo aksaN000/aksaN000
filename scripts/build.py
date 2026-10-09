@@ -85,10 +85,10 @@ def banner():
 {text(44, 228, "Between the model and the metal.", "serif-it", 25, MUTED)}
 <line x1="44" y1="258" x2="104" y2="258" stroke="{BRASS}"/>
 {text(44, 292, "FINAL-YEAR CSE · BRAC UNIVERSITY · DHAKA", "mono", 10.5, MUTED, 0.24)}
-{text(W - 44, 326, "FIG. 01 — ORBITS OF MEMORY", "mono", 10, FAINT, 0.24, "end")}
+{text(W - 44, 326, "FIG. 01 · ORBITS OF MEMORY", "mono", 10, FAINT, 0.24, "end")}
 """
     save("banner.svg", svg(W, h, body, ["serif-lt", "serif-it", "mono"],
-                           "Md. Aksan Gony Alif — AI research, systems and web. Final-year CSE, BRAC University, Dhaka."))
+                           "Md. Aksan Gony Alif: AI research, systems and web. Final-year CSE, BRAC University, Dhaka."))
 
 
 # ─────────────────────────── chapter heads ───────────────────────────
@@ -244,7 +244,7 @@ def work_card(i, repo, tag, title, desc, stack):
     out.append(f'<line x1="{pad}" y1="{ch - 50}" x2="{cw - pad}" y2="{ch - 50}" stroke="{HAIR}"/>')
     out.append(text(pad, ch - 26, stack, "mono", 10, MUTED, 0.14))
     save(f"work-{card_slug(repo)}.svg", svg(cw, ch, "\n".join(out), ["serif", "serif-lt", "serif-it", "mono"],
-                              f"{title} — {desc} Stack: {stack.title()}"))
+                              f"{title}: {desc} Stack: {stack.title()}"))
 
 
 # ─────────────────────────── instruments ───────────────────────────

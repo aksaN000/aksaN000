@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg?v=5513d092" width="100%" alt="Md. Aksan Gony Alif — AI research, systems and web. Final-year CSE, BRAC University, Dhaka." />
+  <img src="assets/banner.svg?v=6458c0f6" width="100%" alt="Md. Aksan Gony Alif: AI research, systems and web. Final-year CSE, BRAC University, Dhaka." />
 </p>
 
 <p align="center">
@@ -14,14 +14,14 @@
   <img src="assets/ch-3.svg?v=651951a4" width="100%" alt="III. Selected works" />
 </p>
 <p align="center">
-  <a href="https://github.com/aksaN000/caem-thesis"><img src="assets/work-caem-thesis.svg?v=f2a9f042" width="49%" alt="CAEM — confidence-aware episodic memory that reduces LLM hallucination" /></a>
-  <a href="https://github.com/aksaN000/Sam2-sar-Flood-mapping"><img src="assets/work-sam2-flood.svg?v=f44e36da" width="49%" alt="SAM 2 for Sentinel-1 SAR flood mapping" /></a>
-  <a href="https://aksan000.github.io/Root-to-End-of-Random-Technical-Concepts/"><img src="assets/work-root-to-end.svg?v=84a65347" width="49%" alt="Root to End — interactive simulations tracing systems concepts from the kernel up to the code" /></a>
-  <a href="https://github.com/aksaN000/Continual-Learning"><img src="assets/work-continual-learning.svg?v=841d9f2e" width="49%" alt="Continual learning: EWC vs. experience replay for BERT" /></a>
-  <a href="https://github.com/aksaN000/A-Comparative-Analysis-of-Traditional-Machine-Learning"><img src="assets/work-text-classifiers.svg?v=05e50d50" width="49%" alt="Text classifiers compared: classical ML, RNNs and transformers across 25 experiments" /></a>
-  <a href="https://github.com/aksaN000/process-manager"><img src="assets/work-process-manager.svg?v=725a148e" width="49%" alt="Process Manager — simulated OS process table in C with POSIX threads" /></a>
-  <a href="https://github.com/aksaN000/vae-music-clustering"><img src="assets/work-vae-music-clustering.svg?v=e85c7006" width="49%" alt="Seven VAEs for multilingual music clustering" /></a>
-  <a href="https://github.com/aksaN000/memestack"><img src="assets/work-memestack.svg?v=d359e8da" width="49%" alt="MemeStack — full-stack meme studio and community" /></a>
+  <a href="https://github.com/aksaN000/caem-thesis"><img src="assets/work-caem-thesis.svg?v=b82025c2" width="49%" alt="CAEM: confidence-aware episodic memory that reduces LLM hallucination" /></a>
+  <a href="https://github.com/aksaN000/Sam2-sar-Flood-mapping"><img src="assets/work-sam2-flood.svg?v=31b54b72" width="49%" alt="SAM 2 for Sentinel-1 SAR flood mapping" /></a>
+  <a href="https://aksan000.github.io/Root-to-End-of-Random-Technical-Concepts/"><img src="assets/work-root-to-end.svg?v=d87bbd6f" width="49%" alt="Root to End: interactive simulations tracing systems concepts from the kernel up to the code" /></a>
+  <a href="https://github.com/aksaN000/Continual-Learning"><img src="assets/work-continual-learning.svg?v=74aba10b" width="49%" alt="Continual learning: EWC vs. experience replay for BERT" /></a>
+  <a href="https://github.com/aksaN000/A-Comparative-Analysis-of-Traditional-Machine-Learning"><img src="assets/work-text-classifiers.svg?v=7f316548" width="49%" alt="Text classifiers compared: classical ML, RNNs and transformers across 25 experiments" /></a>
+  <a href="https://github.com/aksaN000/process-manager"><img src="assets/work-process-manager.svg?v=292b910b" width="49%" alt="Process Manager: simulated OS process table in C with POSIX threads" /></a>
+  <a href="https://github.com/aksaN000/vae-music-clustering"><img src="assets/work-vae-music-clustering.svg?v=0e77ddaa" width="49%" alt="Seven VAEs for multilingual music clustering" /></a>
+  <a href="https://github.com/aksaN000/memestack"><img src="assets/work-memestack.svg?v=986118b0" width="49%" alt="MemeStack: full-stack meme studio and community" /></a>
 </p>
 
 <p align="center">
