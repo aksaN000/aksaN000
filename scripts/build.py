@@ -123,12 +123,10 @@ def chapter(num, title, caption, idx):
 
 # ───────────────────────────── preface ─────────────────────────────
 PREFACE = [
-    "Hello, I'm Aksan: a final-year Computer Science & Engineering student at BRAC University "
-    "in Dhaka, and someone who has to know how a thing works before I'm comfortable using it. "
-    "That instinct is why, when I build something like a multithreaded process manager in C, I end up "
-    "following its mutexes and spinlocks all the way down to the assembly. It's also why my thesis began "
-    "with my own intuition about how memory and confidence should work inside a language model, rather "
-    "than with a paper I was handed.",
+    "Hello, I'm Aksan, someone who has to know how a thing works before I'm comfortable using it. "
+    "When I build something like a multithreaded process manager in C, I end up following its mutexes "
+    "and spinlocks down to the assembly. My thesis started the same way: from my own intuition about "
+    "memory and confidence in language models, not from a paper I was handed.",
     "I think independently, sometimes enough to reach ideas like mixture of experts on my own before "
     "finding them in the literature. I'm learning to connect that instinct to research more effectively.",
 ]

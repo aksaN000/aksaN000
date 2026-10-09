@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/ch-1.svg" width="100%" alt="I. Preface" /><img src="assets/preface.svg" width="100%" alt="Hello, I'm Aksan: a final-year CSE student at BRAC University in Dhaka, and someone who has to know how a thing works before using it. When I build something like a multithreaded process manager in C, I end up following its mutexes and spinlocks down to the assembly, and my thesis began with my own intuition about memory and confidence in language models. I think independently, sometimes enough to reach ideas like mixture of experts on my own before finding them in the literature, and I'm learning to connect that instinct to research more effectively. Where I'm headed: a research-capable, systems-aware, full-stack AI engineer." />
+  <img src="assets/ch-1.svg" width="100%" alt="I. Preface" /><img src="assets/preface.svg" width="100%" alt="Hello, I'm Aksan, someone who has to know how a thing works before I'm comfortable using it. When I build something like a multithreaded process manager in C, I end up following its mutexes and spinlocks down to the assembly. My thesis started the same way: from my own intuition about memory and confidence in language models, not from a paper I was handed. I think independently, sometimes enough to reach ideas like mixture of experts on my own before finding them in the literature. I'm learning to connect that instinct to research more effectively. Where I'm headed: a research-capable, systems-aware, full-stack AI engineer." />
 </p>
 
 <p align="center">
