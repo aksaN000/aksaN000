@@ -203,12 +203,6 @@ WORKS = [
     ("Root-to-End-of-Random-Technical-Concepts", "SYSTEMS · LIVE", "Root to End",
      "Interactive simulations that trace a concept from the kernel up to the code: the event loop, V8, TLS, a mouse click, threads and epoll. Built from real source, checked against real systems.",
      "JAVASCRIPT · LINUX · CHROMIUM · V8"),
-    ("memestack", "FULL STACK · LIVE", "MemeStack",
-     "A meme studio and community: canvas editor, template library, collaborations, challenges, groups and moderation, deployed on Vercel.",
-     "REACT · MUI · EXPRESS · MONGODB · CLOUDINARY"),
-    ("vae-music-clustering", "RESEARCH · GENERATIVE", "VAE Music Clustering",
-     "Seven variational autoencoders, from beta-VAE to a multimodal audio + lyrics model, clustering songs across four languages and three genres.",
-     "PYTORCH · LIBROSA · SCIKIT-LEARN · UMAP"),
     ("Continual-Learning", "RESEARCH · NLP", "Continual Learning",
      "Elastic weight consolidation versus experience replay for a BERT intent classifier trained domain by domain. Sixteen configurations, twelve metrics.",
      "PYTORCH · TRANSFORMERS · BERT"),
@@ -218,6 +212,12 @@ WORKS = [
     ("process-manager", "SYSTEMS · C", "Process Manager",
      "A simulated OS process table: concurrent fork, exit, wait and kill across POSIX threads, with zombie reaping, orphan adoption by init and a race-free monitor.",
      "C · PTHREADS · THREADSANITIZER"),
+    ("vae-music-clustering", "RESEARCH · GENERATIVE", "VAE Music Clustering",
+     "Seven variational autoencoders, from beta-VAE to a multimodal audio + lyrics model, clustering songs across four languages and three genres.",
+     "PYTORCH · LIBROSA · SCIKIT-LEARN · UMAP"),
+    ("memestack", "FULL STACK · LIVE", "MemeStack",
+     "A meme studio and community: canvas editor, template library, collaborations, challenges, groups and moderation, deployed on Vercel.",
+     "REACT · MUI · EXPRESS · MONGODB · CLOUDINARY"),
 ]
 
 
