@@ -15,7 +15,7 @@
 <rect width="440" height="268" fill="#0d1117"/>
 <rect x="0.5" y="0.5" width="439" height="267" fill="none" stroke="#26252a"/>
 <path d="M7.5,15.5V7.5H15.5 M424.5,7.5H432.5V15.5 M432.5,252.5V260.5H424.5 M15.5,260.5H7.5V252.5" fill="none" stroke="#c2a36b" stroke-width="1"/>
-<text x="30.0" y="46.0" class="mono" font-size="11" fill="#c2a36b" text-anchor="start" letter-spacing="0.2em">07</text>
+<text x="30.0" y="46.0" class="mono" font-size="11" fill="#c2a36b" text-anchor="start" letter-spacing="0.2em">06</text>
 <text x="62.0" y="46.0" class="mono" font-size="10.5" fill="#b3ad9f" text-anchor="start" letter-spacing="0.22em">SYSTEMS · C</text>
 <text x="410.0" y="48.0" class="serif" font-size="22" fill="#b3ad9f" text-anchor="end">↗</text>
 <text x="29.0" y="98.0" class="serif-lt" font-size="34" fill="#e9e3d5" text-anchor="start">Process Manager</text>

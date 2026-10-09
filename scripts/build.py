@@ -95,7 +95,7 @@ def banner():
 CHAPTERS = [
     ("I", "Preface", "WHO I AM"),
     ("II", "Current work", "IN PROGRESS"),
-    ("III", "Selected works", "SEVEN PROJECTS"),
+    ("III", "Selected works", "SIX PROJECTS"),
     ("IV", "Instruments", "WHAT I BUILD WITH"),
     ("V", "Ledger", "BY THE NUMBERS"),
     ("VI", "Margins", "OFF THE CLOCK"),
@@ -206,9 +206,6 @@ WORKS = [
     ("memestack", "FULL STACK · LIVE", "MemeStack",
      "A meme studio and community: canvas editor, template library, collaborations, challenges, groups and moderation, deployed on Vercel.",
      "REACT · MUI · EXPRESS · MONGODB · CLOUDINARY"),
-    ("vae-music-clustering", "RESEARCH · GENERATIVE", "VAE Music Clustering",
-     "Seven variational autoencoders, from beta-VAE to a multimodal audio + lyrics model, clustering songs across four languages and three genres.",
-     "PYTORCH · LIBROSA · SCIKIT-LEARN · UMAP"),
     ("Continual-Learning", "RESEARCH · NLP", "Continual Learning",
      "Elastic weight consolidation versus experience replay for a BERT intent classifier trained domain by domain. Sixteen configurations, twelve metrics.",
      "PYTORCH · TRANSFORMERS · BERT"),
