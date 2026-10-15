@@ -29,7 +29,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/ch-5.svg?v=7d62b5d4" width="100%" alt="V. Ledger" /><img src="assets/ledger.svg?v=581515b7" width="100%" alt="Contributions, streaks, public repositories and language mix" />
+  <img src="assets/ch-5.svg?v=7d62b5d4" width="100%" alt="V. Ledger" /><img src="assets/ledger.svg?v=267a0272" width="100%" alt="Contributions, streaks, public repositories and language mix" />
 </p>
 
 <p align="center">
