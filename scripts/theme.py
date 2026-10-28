@@ -12,9 +12,10 @@ FONT_DIR = Path(__file__).parent / "fonts"
 INK = "#0d1117"
 PANEL = "#0e0e10"
 HAIR = "#26252a"
+EDGE = "#262529"  # outer plate border: visible in dark, dissolved into the page in light
 IVORY = "#e9e3d5"
-MUTED = "#b3ad9f"
-FAINT = "#7d786d"
+MUTED = "#c9c3b5"
+FAINT = "#958f83"
 BRASS = "#c2a36b"
 
 # Light edition: the same plates reprinted in ink on paper, served to light-theme viewers via <picture>.
@@ -22,19 +23,20 @@ LIGHT = {
     INK: "#ffffff",
     PANEL: "#fbf9f4",
     HAIR: "#e3ddd0",
-    IVORY: "#1b1a17",
-    MUTED: "#55514a",
-    FAINT: "#8a8478",
-    BRASS: "#8f6a2a",
+    EDGE: "#ffffff",
+    IVORY: "#15130f",
+    MUTED: "#3e3a33",
+    FAINT: "#6b665c",
+    BRASS: "#7a5718",
     "#FCC624": "#1b1a17",  # Tux's yellow disappears on white paper
 }
 
 FONTS = {
-    "serif": ("Cormorant", "cormorant-400.woff", 400, "normal"),
-    "serif-lt": ("Cormorant", "cormorant-300.woff", 300, "normal"),
-    "serif-md": ("Cormorant", "cormorant-500.woff", 500, "normal"),
-    "serif-it": ("Cormorant", "cormorant-italic-400.woff", 400, "italic"),
-    "mono": ("JetBrains Mono", "jetbrains-400.woff", 400, "normal"),
+    "serif": ("Cormorant", "cormorant-500.woff", 500, "normal"),
+    "serif-lt": ("Cormorant", "cormorant-400.woff", 400, "normal"),
+    "serif-md": ("Cormorant", "cormorant-600.woff", 600, "normal"),
+    "serif-it": ("Cormorant", "cormorant-italic-500.woff", 500, "italic"),
+    "mono": ("JetBrains Mono", "jetbrains-500.woff", 500, "normal"),
 }
 
 
@@ -75,11 +77,11 @@ def font_css(*keys):
             f"src:url(data:font/woff;base64,{data}) format('woff');}}"
         )
     classes = {
-        "serif": "font-family:'Cormorant',Georgia,serif;font-weight:400;font-variant-numeric:lining-nums",
-        "serif-lt": "font-family:'Cormorant',Georgia,serif;font-weight:300;font-variant-numeric:lining-nums",
-        "serif-md": "font-family:'Cormorant',Georgia,serif;font-weight:500;font-variant-numeric:lining-nums",
-        "serif-it": "font-family:'Cormorant',Georgia,serif;font-weight:400;font-style:italic;font-variant-numeric:lining-nums",
-        "mono": "font-family:'JetBrains Mono',Consolas,monospace;font-weight:400",
+        "serif": "font-family:'Cormorant',Georgia,serif;font-weight:500;font-variant-numeric:lining-nums",
+        "serif-lt": "font-family:'Cormorant',Georgia,serif;font-weight:400;font-variant-numeric:lining-nums",
+        "serif-md": "font-family:'Cormorant',Georgia,serif;font-weight:600;font-variant-numeric:lining-nums",
+        "serif-it": "font-family:'Cormorant',Georgia,serif;font-weight:500;font-style:italic;font-variant-numeric:lining-nums",
+        "mono": "font-family:'JetBrains Mono',Consolas,monospace;font-weight:500",
     }
     rules += [f".{k}{{{v}}}" for k, v in classes.items() if k in keys]
     return "\n".join(rules)
