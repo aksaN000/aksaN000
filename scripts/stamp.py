@@ -8,12 +8,12 @@ README = ROOT / "README.md"
 
 
 def stamp(match):
-    path = match.group(1)
+    attr, path = match.group(1), match.group(2)
     digest = hashlib.sha1((ROOT / path).read_bytes()).hexdigest()[:8]
-    return f'src="{path}?v={digest}"'
+    return f'{attr}="{path}?v={digest}"'
 
 
 text = README.read_text(encoding="utf-8")
-updated = re.sub(r'src="(assets/[^"?]+\.svg)(?:\?v=[0-9a-f]+)?"', stamp, text)
+updated = re.sub(r'(src|srcset)="(assets/[^"?]+\.svg)(?:\?v=[0-9a-f]+)?"', stamp, text)
 README.write_text(updated, encoding="utf-8", newline="\n")
-print(f"stamped {len(re.findall(r'src=\"assets/', updated))} images")
+print(f"stamped {len(re.findall(r'src(?:set)?=\"assets/', updated))} images")

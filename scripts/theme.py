@@ -1,6 +1,7 @@
 """Shared design system for the profile SVGs: palette, embedded fonts, text metrics."""
 import base64
 import html
+import re
 from functools import lru_cache
 from pathlib import Path
 
@@ -15,6 +16,18 @@ IVORY = "#e9e3d5"
 MUTED = "#b3ad9f"
 FAINT = "#7d786d"
 BRASS = "#c2a36b"
+
+# Light edition: the same plates reprinted in ink on paper, served to light-theme viewers via <picture>.
+LIGHT = {
+    INK: "#ffffff",
+    PANEL: "#fbf9f4",
+    HAIR: "#e3ddd0",
+    IVORY: "#1b1a17",
+    MUTED: "#55514a",
+    FAINT: "#8a8478",
+    BRASS: "#8f6a2a",
+    "#FCC624": "#1b1a17",  # Tux's yellow disappears on white paper
+}
 
 FONTS = {
     "serif": ("Cormorant", "cormorant-400.woff", 400, "normal"),
@@ -109,3 +122,17 @@ def grain(pid="grain", opacity=0.05):
     """Fine dot lattice used as paper texture."""
     return (f'<defs><pattern id="{pid}" width="6" height="6" patternUnits="userSpaceOnUse">'
             f'<circle cx="1" cy="1" r="0.55" fill="{IVORY}" opacity="{opacity}"/></pattern></defs>')
+
+
+def to_light(content):
+    """Recolour a dark plate into its light edition by swapping palette hexes in one pass."""
+    pattern = re.compile("|".join(re.escape(k) for k in LIGHT), re.IGNORECASE)
+    lookup = {k.lower(): v for k, v in LIGHT.items()}
+    return pattern.sub(lambda m: lookup[m.group(0).lower()], content)
+
+
+def write_pair(path, content):
+    """Writes name.svg (dark) and name-light.svg (light) side by side."""
+    path = Path(path)
+    path.write_text(content, encoding="utf-8")
+    path.with_name(f"{path.stem}-light{path.suffix}").write_text(to_light(content), encoding="utf-8")

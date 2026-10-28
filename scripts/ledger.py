@@ -5,7 +5,7 @@ import os
 import urllib.request
 from pathlib import Path
 
-from theme import BRASS, FAINT, HAIR, INK, IVORY, MUTED, measure, svg, text
+from theme import BRASS, FAINT, HAIR, INK, IVORY, MUTED, measure, svg, text, write_pair
 
 USER = os.environ.get("GH_USER", "aksaN000")
 TOKEN = os.environ["GH_TOKEN"]
@@ -121,7 +121,7 @@ def render(user):
     out.append(text(W - pad, h - 16, stamp, "mono", 9, FAINT, 0.18, "end"))
     alt = (f"{cal['totalContributions']} contributions in the last year; current streak {current} days; "
            f"longest streak {longest} days; top languages: " + ", ".join(f"{n} {s:.0%}" for n, s in langs))
-    OUT.write_text(svg(W, h, "\n".join(out), ["serif-lt", "mono"], alt), encoding="utf-8")
+    write_pair(OUT, svg(W, h, "\n".join(out), ["serif-lt", "mono"], alt))
     print(alt)
 
 

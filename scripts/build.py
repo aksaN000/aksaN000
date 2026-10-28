@@ -5,7 +5,7 @@ import re
 from pathlib import Path
 
 from theme import (BRASS, FAINT, HAIR, INK, IVORY, MUTED, esc, grain, measure,
-                   svg, text, ticks, wrap)
+                   svg, text, ticks, wrap, write_pair)
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "assets"
@@ -15,7 +15,7 @@ W = 900
 
 def save(name, content):
     OUT.mkdir(exist_ok=True)
-    (OUT / name).write_text(content, encoding="utf-8")
+    write_pair(OUT / name, content)
     print(f"{name:28s} {len(content.encode()) / 1024:6.1f} KB")
 
 
