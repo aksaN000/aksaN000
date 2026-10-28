@@ -38,11 +38,20 @@ FONTS = {
     "serif-it": ("Cormorant", "cormorant-italic-500.woff", 500, "italic"),
     "mono": ("JetBrains Mono", "jetbrains-500.woff", 500, "normal"),
 }
+# Dark ink on white reads thinner than light on dark, so the light edition is set one weight heavier.
+LIGHT_FONTS = {
+    "serif": ("Cormorant", "cormorant-600.woff", 600, "normal"),
+    "serif-lt": ("Cormorant", "cormorant-500.woff", 500, "normal"),
+    "serif-md": ("Cormorant", "cormorant-700.woff", 700, "normal"),
+    "serif-it": ("Cormorant", "cormorant-italic-600.woff", 600, "italic"),
+    "mono": ("JetBrains Mono", "jetbrains-600.woff", 600, "normal"),
+}
 
 
 @lru_cache(maxsize=None)
 def _font(key):
-    return TTFont(FONT_DIR / FONTS[key][1])
+    # measure with the heavier (wider) light cut so text wraps safely in both editions
+    return TTFont(FONT_DIR / LIGHT_FONTS[key][1])
 
 
 def measure(text, key, size, spacing=0.0):
@@ -67,23 +76,20 @@ def wrap(text, key, size, width, spacing=0.0):
     return lines
 
 
-def font_css(*keys):
+def font_css(keys, fonts=FONTS):
     rules = []
     for key in dict.fromkeys(keys):
-        family, file, weight, style = FONTS[key]
+        family, file, weight, style = fonts[key]
         data = base64.b64encode((FONT_DIR / file).read_bytes()).decode()
         rules.append(
             f"@font-face{{font-family:'{family}';font-weight:{weight};font-style:{style};"
             f"src:url(data:font/woff;base64,{data}) format('woff');}}"
         )
-    classes = {
-        "serif": "font-family:'Cormorant',Georgia,serif;font-weight:500;font-variant-numeric:lining-nums",
-        "serif-lt": "font-family:'Cormorant',Georgia,serif;font-weight:400;font-variant-numeric:lining-nums",
-        "serif-md": "font-family:'Cormorant',Georgia,serif;font-weight:600;font-variant-numeric:lining-nums",
-        "serif-it": "font-family:'Cormorant',Georgia,serif;font-weight:500;font-style:italic;font-variant-numeric:lining-nums",
-        "mono": "font-family:'JetBrains Mono',Consolas,monospace;font-weight:500",
-    }
-    rules += [f".{k}{{{v}}}" for k, v in classes.items() if k in keys]
+    fallback = {"Cormorant": "Georgia,serif;font-variant-numeric:lining-nums", "JetBrains Mono": "Consolas,monospace"}
+    for key in dict.fromkeys(keys):
+        family, _, weight, style = fonts[key]
+        rules.append(f".{key}{{font-family:'{family}',{fallback[family].split(';')[0]};font-weight:{weight};"
+                     f"font-style:{style}{';' + fallback[family].split(';')[1] if ';' in fallback[family] else ''}}}")
     return "\n".join(rules)
 
 
@@ -95,7 +101,7 @@ def svg(width, height, body, fonts, title, extra_css=""):
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="{esc(title)}">
 <title>{esc(title)}</title>
 <style>
-{font_css(*fonts)}
+/*@fonts:{",".join(fonts)}*/
 {extra_css}
 @media (prefers-reduced-motion: reduce){{*{{animation:none!important}}}}
 </style>
@@ -136,5 +142,10 @@ def to_light(content):
 def write_pair(path, content):
     """Writes name.svg (dark) and name-light.svg (light) side by side."""
     path = Path(path)
-    path.write_text(content, encoding="utf-8")
-    path.with_name(f"{path.stem}-light{path.suffix}").write_text(to_light(content), encoding="utf-8")
+    path.write_text(_embed_fonts(content, FONTS), encoding="utf-8")
+    path.with_name(f"{path.stem}-light{path.suffix}").write_text(
+        _embed_fonts(to_light(content), LIGHT_FONTS), encoding="utf-8")
+
+
+def _embed_fonts(content, fonts):
+    return re.sub(r"/\*@fonts:([^*]*)\*/", lambda m: font_css(m.group(1).split(","), fonts), content)

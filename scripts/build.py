@@ -16,7 +16,7 @@ W = 900
 def save(name, content):
     OUT.mkdir(exist_ok=True)
     write_pair(OUT / name, content)
-    print(f"{name:28s} {len(content.encode()) / 1024:6.1f} KB")
+    print(f"{name:28s} {(OUT / name).stat().st_size / 1024:6.1f} KB")
 
 
 def plate(h, inner=""):
